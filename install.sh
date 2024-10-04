@@ -8,7 +8,7 @@ check_command() {
 
 create_symlinks() {
     echo "Removing existing dotfiles..."
-    rm -rf  ~/.zshrc ~/.alias ~/.environment ~/.path ~/.function 2>/dev/null
+    rm -rf  ~/.zshrc ~/.zprofile ~/.alias ~/.environment ~/.path ~/.function 2>/dev/null
 
     echo "Creating symlinks..."
     ln -s ~/dotfiles/.alias ~/.alias
@@ -16,6 +16,7 @@ create_symlinks() {
     ln -s ~/dotfiles/.function ~/.function
     ln -s ~/dotfiles/.path ~/.path
     ln -s ~/dotfiles/.zshrc ~/.zshrc
+    ln -s ~/dotfiles/.zprofile ~/.zprofile
 }
 
 install_brew() {
@@ -27,6 +28,7 @@ install_brew() {
 			eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 		fi
 	fi
+        eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
 install_brew_packages() {
