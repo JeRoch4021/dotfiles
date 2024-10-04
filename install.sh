@@ -8,13 +8,14 @@ check_command() {
 
 create_symlinks() {
     echo "Removing existing dotfiles..."
-    rm -rf  ~/.zshrc ~/.alias ~/.env ~/.path ~/.function 2>/dev/null
+    rm -rf  ~/.zshrc ~/.alias ~/.environment ~/.path ~/.function 2>/dev/null
 
     echo "Creating symlinks..."
     ln -s ~/dotfiles/.alias ~/.alias
-    ln -s ~/dotfiles/.env ~/.env
+    ln -s ~/dotfiles/.environment ~/.environment
     ln -s ~/dotfiles/.function ~/.function
     ln -s ~/dotfiles/.path ~/.path
+    ln -s ~/dotfiles/.zshrc ~/.zshrc
 }
 
 install_brew() {
